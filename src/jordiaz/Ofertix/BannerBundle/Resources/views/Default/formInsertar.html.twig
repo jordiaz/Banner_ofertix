@@ -1,0 +1,55 @@
+{% extends 'jordiazOfertixBannerBundle::layout.html.twig' %}
+
+ {% block contenido %}
+
+{% if mensaje is defined %}
+<b><span style="color: red;">{{ mensaje }}</span></b>
+{% endif %}
+<br/><br/>
+
+<div id="formulario">
+
+
+
+
+
+
+
+<form name="formInsertar" enctype="multipart/form-data" action="{{ path('JOBB_insertar') }}" method="POST">
+
+
+
+            <p>Titulo<input type="text" name="titulo" value="{{ titulo }}"  id="txt"/></p><br>
+            <p>Alt<input type="text" name="alt" value="{{ alt }}"  id="txt"/></p><br>
+            <p>Href<input type="text" name="href" value="{{ href }}http://www." id="txt"/></p><br>
+            <p>Tiempo<input type="text" name="tiempo" value="{{ tiempo }}" id="txtNumbers"/></p><br><br/><br/><br/><br/>
+	    <input type="hidden" name="id" value="{{ id }}"/>
+	    <input type="hidden" name="clicks" value="{{ clicks }}" />
+
+	   <input name="file-input" id="file-input" type="file" /><br/><br/><br/>
+	   <img id="imgSalida" name="imgSalida" src="" />
+	   <input type="hidden" name="path" value="{{ path }}"/>
+
+<br/>
+<!-- crop antiguo     
+<div class="jc_coords">
+
+	<input type="hidden" id="src" name="src" />
+	<input type="hidden" id="x" name="x" />
+	<input type="hidden" id="y" name="y" />
+	<input type="hidden" id="w" name="w" />
+	<input type="hidden" id="h" name="h" />
+	<input type="submit" value="Crop Image" style="float:left; width: 98px;" />
+	<p style="margin: 0 0 0 110px; font-size: 90%;">
+		Press the button on the left, and the cropped image will display.
+		Then, press your browser's <i>Back</i> button to return to this page.
+	</p>
+ -->
+
+
+	</br><br/><br/>
+    <input type="submit" value="Insertar" name="insertar" />
+</form>
+</div>
+
+{% endblock %}

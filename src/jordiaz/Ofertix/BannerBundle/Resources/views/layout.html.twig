@@ -1,0 +1,66 @@
+{% extends '::base.html.twig' %}
+
+
+
+{% block body %}
+
+
+
+
+
+</div>
+
+	<div id="cabecera">
+
+		 <h1><a href="http://www.ofertix.com/home">OFERTIX</a></h1>
+
+	    <ul  id="submenu">
+		    <li>
+			<a href="#">Iniciar sesión</a>
+		    </li>
+		    <li class="float_l"><a href="http://www.ofertix.com/contacto">Contacto</a></li>
+		    <li class="float_l"><a href="http://www.ofertix.com/ayuda">Ayuda</a></li>
+		    <li class="float_l">
+			<span class="float_r"><a href="#">Mi cuenta</a></span>
+		    </li>
+	    </ul>
+	</div>
+
+
+
+	<div id="header_menu">
+
+		<ul>
+	      		<li>   <a href="{{ path('JOBB_homepage')}}">INICIO</a> </li>
+			<li>   <a href="listar">VER BANNERS</a> </li>
+			<li>   <a href="insertar">INSERTAR BANNERS</a> </li>
+			<li>   <h1 align="center" id="cuenta"></h1>  </li>
+		            
+		</ul>
+	</div>
+
+	<div id="main">
+
+		<div id="contenido">
+
+			{% block contenido %}
+			{% endblock %}
+
+		</div>
+
+		<div id="lateral">
+
+		  	{% block banners %}
+	
+				{{banner[1] | raw}}
+
+				{{banner[random(range(1, elementos))] | raw}}
+				{{banner[random(range(1, elementos))] | raw}}
+				{{banner[random(range(1, elementos))] | raw}}
+
+		  	{% endblock %}
+
+		</div>
+	</div>
+
+{% endblock %}

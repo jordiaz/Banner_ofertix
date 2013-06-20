@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Ofertix | Club de venta privada{% endblock %}</title>
+
+	{% block meta %}
+		
+		    <meta name="description" content="Formar parte del club de venta privada ofertix.com es totalmente gratuito y sin ningún compromiso. Ventas Exclusivas Primeras Marcas. Ofertix, The Shop Stock. Es un club de compra venta privada online que organiza, en exclusiva para sus socios, ventas puntuales de productos de primeras marcas con descuentos de hasta un 80%, en relación al precio de las tiendas. Zapatos, bolsos, ropa, complementos, relojes, deportes, bisutería, perfumería, electrónica de consumo. las mejores marcas a precios exclusivos en el club de venta privada Ofertix. No pierdas la oportunidad de ir a la última con las mejores marcas. Hazte socio de Ofertix, compra venta privada.">
+		    <meta name="keywords" content="Ofertix, Club de Venta Privada, Club Venta Privada, Compra Venta Privada">
+		
+	{% endblock %}
+
+        {% block stylesheets %}
+
+
+	<link href="{{ asset('bundles/jordiazofertixbanner/css/global.css') }}" type="text/css" rel="stylesheet" />
+
+
+	{% endblock %}
+
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon_ocio.ico') }}" />
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+
+	{% block javascripts %}
+
+		<script src="{{ asset('bundles/jordiazofertixbanner/js/upload.js') }}" type="text/javascript"></script>
+		<script src="{{ asset('bundles/jordiazofertixbanner/js/jquery-1.10.1.min.js') }}" type="text/javascript"></script>
+
+	<script>
+
+
+$(document).ready(function(){ 
+$("#txtNumbers").keydown(function(event) {
+   if(event.shiftKey)
+   {
+        event.preventDefault();
+   }
+ 
+   if (event.keyCode == 46 || event.keyCode == 8)    {
+   }
+   else {
+        if (event.keyCode < 95) {
+          if (event.keyCode < 48 || event.keyCode > 57) {
+                event.preventDefault();
+          }
+        } 
+        else {
+              if (event.keyCode < 96 || event.keyCode > 105) {
+                  event.preventDefault();
+              }
+        }
+      }
+   });
+});
+
+
+
+
+	$(window).load(function(){
+
+	 $(function() {
+	  $('#file-input').change(function(e) {
+	      addImage(e); 
+	     });
+
+	     function addImage(e){
+	      var file = e.target.files[0],
+	      imageType = /image.*/;
+	    
+	      if (!file.type.match(imageType))
+	       return;
+	  
+	      var reader = new FileReader();
+	      reader.onload = fileOnload;
+	      reader.readAsDataURL(file);
+	     }
+	  
+	     function fileOnload(e) {
+	      var result=e.target.result;
+	      $('#imgSalida').attr("src",result);
+
+
+	<!-- este es el crop antiguo
+
+	jQuery(function(){
+
+		jQuery('#imgSalida').Jcrop({
+			aspectRatio: 1,
+			onSelect: updateCoords
+		});
+
+	});
+
+	function updateCoords(c)
+	{
+		jQuery('#x').val(c.x);
+		jQuery('#y').val(c.y);
+		jQuery('#w').val(c.w);
+		jQuery('#h').val(c.h);
+	};
+
+	function checkCoords()
+	{
+		if (parseInt(jQuery('#w').val())>0) return true;
+		return false;
+	};
+
+
+
+
+	-->
+	     }
+	    });
+	  });
+
+
+//la cuenta para matar los banners
+window.onload = function() { 
+var contar = 0; //valor inicial. 
+
+cuenta = document.getElementById("cuenta"); //elemento donde escribimos la cuenta atrás 
+
+     function cuentaAtras() { 
+
+         contar =contar+1; //variar el número de la cuenta
+         cuenta.innerHTML = "Vida del Banner: "+contar; //escribir el número
+   
+	 if ( document.getElementById(contar+"a") ){
+            document.getElementById(contar+"a").style.display = "none"; 
+         }
+	 if ( document.getElementById(contar+"b") ){
+            document.getElementById(contar+"b").style.display = "none"; 
+         }
+	 if ( document.getElementById(contar+"c") ){
+            document.getElementById(contar+"c").style.display = "none"; 
+         }
+	 if ( document.getElementById(contar+"d") ){
+            document.getElementById(contar+"d").style.display = "none"; 
+         }
+     } 
+     cuentaAtras() //llamada a la función de cuenta atrás
+         //repetir la función cuenta atrás cada segundo
+     ignicion = setInterval(cuentaAtras,1000);
+}
+	</script>
+	{% endblock %}
+
+    </body>
+</html>

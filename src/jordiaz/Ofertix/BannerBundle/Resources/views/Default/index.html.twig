@@ -1,0 +1,29 @@
+{% extends 'jordiazOfertixBannerBundle::layout.html.twig' %}
+
+{% block contenido %}
+
+
+<h2>Sistema de gestión de banners</h2>
+<h3> Fecha: {{fecha}}  </h3>
+
+<p id="texto">
+Desarrollar un sistema de gestión de banners para mostrar en determinadas zonas de una
+página web el código deseado utilizando Symfony2. Se deberá poder configurar un banner para
+que únicamente esté activo en un determinado espacio de tiempo.</br>
+Se trata de conseguir que al introducir una marca en una plantilla de twig, se sustituya por el
+código que se haya definido. Por ejemplo:</br>
+[{ banner01 }]  por  href=”http://www.ofertix.com” title=”Enlace a Ofertix”> img src=”http://static01.ofertix.com/images/logo_ofertix.png” alt=”Logo de Ofertix” /></a>
+Si para una misma zona se define más de un banner, se mostrará cualquiera de ellos de forma
+aleatoria.</br>
+El apartado de administración deberá contar con un formulario para subir imágenes y que
+devuelva el path donde se ha subido la imagen para poder trabajar con ella.</br>
+No es necesario desarrollar un sistema de autenticación de usuario.</br>
+Se valorará positivamente:</br>
+­ Gestor realizado con ExtJS 4</br>
+­ Contador de clicks de cada banner asíncrono</br>
+­ Herramienta para realizar el upload que permita hacer un crop de la imagen
+
+
+</p>
+
+{% endblock %}

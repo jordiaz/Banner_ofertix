@@ -1,0 +1,4 @@
+jordiaz_ofertix_banner:
+    resource: "@jordiazOfertixBannerBundle/Resources/config/routing.yml"
+    prefix:   /banners
+

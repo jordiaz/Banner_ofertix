@@ -1,0 +1,7 @@
+parameters:
+#    jordiaz_ofertix_banner.example.class: jordiaz\Ofertix\BannerBundle\Example
+
+services:
+#    jordiaz_ofertix_banner.example:
+#        class: %jordiaz_ofertix_banner.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

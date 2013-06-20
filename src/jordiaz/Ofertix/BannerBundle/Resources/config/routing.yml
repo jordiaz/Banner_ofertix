@@ -1,0 +1,23 @@
+JOBB_homepage:
+ pattern:  /
+ defaults: { _controller: jordiazOfertixBannerBundle:Default:index }
+
+JOBB_listar:
+  pattern:  /listar
+  defaults: { _controller: jordiazOfertixBannerBundle:Default:listar }
+
+JOBB_insertar:
+  pattern:  /insertar
+  defaults: { _controller: jordiazOfertixBannerBundle:Default:insertar }
+
+JOBB_buscar:
+  pattern:  /buscar
+  defaults: { _controller: jordiazOfertixBannerBundle:Default:buscarPorId  }
+
+JOBB_ver:
+  pattern:  /ver/{id}
+  defaults: { _controller: jordiazOfertixBannerBundle:Default:ver }
+
+JOBB_ver:
+  pattern:  /linka/{id}
+  defaults: { _controller: jordiazOfertixBannerBundle:Default:linka }

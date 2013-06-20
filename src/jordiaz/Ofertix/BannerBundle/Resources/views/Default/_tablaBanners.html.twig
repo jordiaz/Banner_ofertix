@@ -1,0 +1,21 @@
+
+ <table>
+      <tr>
+          <th>Banner</th>
+          <th>Titulo</th>
+          <th>Tiempo</th>
+	  <th>Clicks</th>
+      </tr>
+      {% for info_banner in banners %}
+      <tr>
+          <td>{{ info_banner.id }}</td>
+          <td>{{ info_banner.titulo }}</td>
+          <td>{{ info_banner.tiempo }}</td>
+	  <td>{{ info_banner.clicks }}</td>
+      </tr>
+	
+      {% endfor %}
+
+
+
+  </table>

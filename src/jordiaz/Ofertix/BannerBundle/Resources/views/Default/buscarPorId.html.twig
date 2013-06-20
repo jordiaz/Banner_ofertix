@@ -1,0 +1,24 @@
+ {% extends 'jordiazOfertixBannerBundle::layout.html.twig' %}
+
+  {% block contenido %}
+
+ <form id="formBusqueda" action="{{ path('JOBB_buscar') }}" method="POST">
+
+      <table>
+          <tr>
+              <td>ID:</td>
+              <td><input type="text" id="id" value="{{ id }}"></td>
+
+              <td><input type="submit" value="buscar"></td>
+          </tr>
+      </table>
+
+      </table>
+
+  </form>
+
+  {% if resultado %}
+  {% include 'jordiazOfertixBannerBundle:Default:_tablaBanners.html.twig' with {'banners': resultado} %}
+  {% endif %}
+
+ {% endblock %}
